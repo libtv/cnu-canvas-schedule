@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <script src="./canvas.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./row-config.js"></script>
+    <script src="./sigan-config.js"></script>
     <script src="./draw.js"></script>
     <link rel="stylesheet" href="draw.css" />
     <title>Document</title>
@@ -13,6 +16,23 @@
   </body>
   <script>
     let canvas = new DrawSchedule("draw-schedule");
+    let my_data = [
+      { date: 5.5, 화: "공2204" },
+      { date: 6, 화: "공2204" },
+      { date: 1, 수: "공2204" },
+      { date: 1.5, 수: "공2204" },
+      { date: 2, 수: "공2204" },
+      { date: 2.5, 수: "공2204" },
+      { date: 3, 수: "공2204" },
+
+      { date: 5, 수: "공2204" },
+      { date: 5.5, 수: "공2204" },
+
+      { date: 6, 목: "영2204" },
+      { date: 6.5, 목: "영2204" },
+    ];
     canvas.init();
+    canvas.setData(my_data);
+    canvas.siganDraw();
   </script>
 </html>

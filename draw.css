@@ -11,12 +11,21 @@ table {
   border-style: hidden;
   box-shadow: 0 0 0 1px #a0a0a0;
 }
-th,
+th {
+  padding: 2px 0px;
+  border: 1px solid #a0a0a0;
+  width: 80px;
+  text-align: center;
+  font-size: 12px;
+}
+
 td {
   padding: 2px 0px;
   border: 1px solid #a0a0a0;
   width: 80px;
   text-align: center;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 @font-face {
