@@ -1,0 +1,35 @@
+body {
+  font-family: "TAEBAEKmilkyway";
+  color: #a0a0a0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-radius: 10px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #a0a0a0;
+}
+th,
+td {
+  padding: 2px 0px;
+  border: 1px solid #a0a0a0;
+  width: 80px;
+  text-align: center;
+}
+
+@font-face {
+  font-family: "TAEBAEKmilkyway";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/TAEBAEKmilkyway.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.drawschedule-small-cell {
+  width: 5px;
+}
+
+.drawschedule-big-cell {
+  height: 80px;
+}
