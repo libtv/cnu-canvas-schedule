@@ -469,3 +469,11 @@ DrawSchedule.prototype.getColor = function () {
 
   return [color, backgroundColor];
 };
+
+DrawSchedule.prototype.dr = function () {
+  if (this.type == 0) {
+    this.siganDraw();
+  } else {
+    this.draw2();
+  }
+};
