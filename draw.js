@@ -372,8 +372,14 @@ DrawSchedule.prototype.draw2 = function () {
 
     for (let i = start_day; i <= end_day; i++) {
       let target = this.dataMap[i - 1];
-      let target_arr = target.data_children.filter((d) => d.used === false);
-      beanCell.push({ ...target_arr, idx: i });
+      let target_arr = [];
+      target.data_children.map((d) => {
+        if (d.used == false) {
+          target_arr.push(d);
+        }
+      });
+
+      beanCell.push({ ...target_arr });
     }
 
     /** @type {Array} */
@@ -386,13 +392,12 @@ DrawSchedule.prototype.draw2 = function () {
         }
         return prev;
       } else {
-        let ra = [];
         for (let ij = 0; ij < 3; ij++) {
           if (typeof curr[ij] !== "undefined" && typeof prev[ij] !== "undefined") {
-            ra.push(curr[ij].idx);
+            prev.push(curr[ij].idx);
           }
         }
-        return ra;
+        return prev;
       }
     }, []);
 
