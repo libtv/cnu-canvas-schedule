@@ -42,3 +42,82 @@ td {
 .drawschedule-big-cell {
   height: 80px;
 }
+
+.draw-schedule-type1 {
+  width: 1200px;
+  height: 700px;
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-weight: 600;
+}
+
+.draw-schedule-type1-headers {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.draw-schedule-type1-headers-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-right: rgb(218, 220, 224) 1px solid;
+  border-top: rgb(218, 220, 224) 1px solid;
+  border-bottom: rgb(218, 220, 224) 1px solid;
+}
+
+.draw-schedule-type1-headers-header:first-child {
+  border-left: rgb(218, 220, 224) 1px solid;
+}
+
+.draw-schedule-type1-contents {
+  width: 100%;
+  height: 84%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-content: start;
+  align-content: start;
+}
+
+.draw-schedule-type1-contents-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+
+  border-right: rgb(218, 220, 224) 1px solid;
+  border-bottom: rgb(218, 220, 224) 1px solid;
+
+  position: relative;
+}
+
+.draw-schedule-type1-contents-content:nth-child(7n + 1) {
+  border-left: rgb(218, 220, 224) 1px solid;
+}
+
+.draw-schedule-type1-contents-content-cell-1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.draw-schedule-type1-contents-content-cell-2 {
+  width: 100%;
+  height: 100%;
+  /* background-color: #a0a0a0; */
+}
+
+.real-info-cell {
+  color: white;
+  font-weight: 800;
+  z-index: 0;
+  overflow: hidden;
+}

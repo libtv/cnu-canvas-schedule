@@ -6,6 +6,8 @@
     <!-- <script src="./canvas.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./row-config.js"></script>
+    <script src="./uitls.js"></script>
+    <script src="./cellsize.js"></script>
     <script src="./sigan-config.js"></script>
     <script src="./draw.js"></script>
     <link rel="stylesheet" href="draw.css" />
@@ -15,7 +17,7 @@
     <div id="draw-schedule"></div>
   </body>
   <script>
-    let canvas = new DrawSchedule("draw-schedule");
+    let canvas = new DrawSchedule("draw-schedule", 1);
     let my_data = [
       { date: 5.5, 화: "공2204" },
       { date: 6, 화: "공2204" },
@@ -31,8 +33,22 @@
       { date: 6, 목: "영2204" },
       { date: 6.5, 목: "영2204" },
     ];
+
+    let my_data2 = [
+      { jemok: "통합정보시스템 서비스 중지 안내", stt_dt: "20231011", stt_time: "0900", end_dt: "20231030", end_time: "2400" },
+      { jemok: "SFSDFASDFASD", stt_dt: "20231021", stt_time: "0900", end_dt: "20231031", end_time: "2400" },
+      { jemok: "SFSDFASDFASD", stt_dt: "20231001", stt_time: "0900", end_dt: "20231031", end_time: "2400" },
+      { jemok: "SFSDFASDFASD", stt_dt: "20231001", stt_time: "0900", end_dt: "20231031", end_time: "2400" },
+    ];
+
+    my_data2 = my_data2.sort((a, b) => {
+      return Number(a.stt_dt) - Number(b.stt_dt);
+    });
+
     canvas.init();
-    canvas.setData(my_data);
-    canvas.siganDraw();
+    canvas.setData(my_data2);
+    canvas.draw2();
+    // canvas.setData(my_data);
+    // canvas.siganDraw();
   </script>
 </html>
