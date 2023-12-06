@@ -17,6 +17,8 @@
   ![alt](./img/교수_할일.PNG)
 
 ### try it
+
+- javascript
 ```javascript
 
  <script>
@@ -56,4 +58,27 @@
     canvas.dr();
   </script>
 
+```
+
+- html
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="./canvas.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./row-config.js"></script>
+    <script src="./uitls.js"></script>
+    <script src="./cellsize.js"></script>
+    <script src="./sigan-config.js"></script>
+    <script src="./draw.js"></script>
+    <link rel="stylesheet" href="draw.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="draw-schedule"></div>
+  </body>
+</html>
 ```
