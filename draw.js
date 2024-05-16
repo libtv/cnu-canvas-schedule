@@ -267,6 +267,7 @@ DrawSchedule.prototype.setData = function (/** @type {Array} */ data) {
 
       let d = new SiganConfig(param[0], param[1], name);
       let a = d.getWhere();
+      
 
       if (value_arr.indexOf(name) == -1) value_arr.push(name);
 
@@ -359,13 +360,46 @@ DrawSchedule.prototype.siganDraw = function () {
   });
 };
 
+DrawSchedule.prototype.getStartEndDayByMonth = function (current_month, start, end ) {
+  console.log(current_month)
+  console.log(end)
+  console.log(start)
+
+  let start_month = start.substring(0, 6)
+  let end_month = end.substring(0, 6)
+
+  if (current_month == start_month && current_month == end_month) {
+    return [start.substring(6, 8), end.substring(6, 8)]
+  }
+
+  let s = ''
+  let e = ''
+  if (Number(start_month) > Number(current_month)) {
+    s = 0;
+  } else {
+    s = start.substring(6, 8)
+  }
+  
+  if (Number(end_month) > Number(current_month)) {
+    e = 31
+  } else {
+    e = end.substring(6, 8)
+  }
+
+    return [s, e]
+}
+
 DrawSchedule.prototype.draw2 = function () {
   /** @type {NoticeVO[]} */
   let data = this.siganData;
   data.map((v) => {
-    let start_day = Number(v.stt_dt.substring(6, 8));
-    let end_day = Number(v.end_dt.substring(6, 8));
+    // month 확인 
+    // TODO Year 도 확인해야 함
 
+    let current_year = new Date().getFullYear()
+    let current_month = (new Date().getMonth() + 1).toString().padStart(2, 0)
+    let [start_day, end_day] = this.getStartEndDayByMonth(`${current_year}${current_month}`, v.stt_dt, v.end_dt)
+    
     let endMinusStart = end_day - start_day;
 
     let beanCell = [];
